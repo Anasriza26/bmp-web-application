@@ -1,103 +1,110 @@
 import Image from "next/image";
-
+import Logo from "../public/BMP-Logo.jpg";
+import GoogleIcon from "../public/google-icon.jpg";
+import Link from "next/link";
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+    <>
+      <main
+  className="flex flex-col justify-center items-center min-h-screen bg-cover bg-center relative"
+  style={{ backgroundImage: "url('/bg-img.jpg')" }}
+>
+  <div className="m-[210px] w-[343px]">
+    <Image src={Logo} alt="Logo Image" className="mx-auto mb-10" />
+    <div className="text-start mb-6 font-inter">
+      <div className="font-semibold text-2xl leading-8 text-[#101828] pb-[2px]">
+        Sign in
+      </div>
+      <p className="font-normal text-base leading-6 tracking-normal text-[#667085]">
+        Welcome back! Please enter your details.
+      </p>
     </div>
+    <form className="font-inter">
+      <div className="mb-4">
+        <label
+          htmlFor="email"
+          className="font-medium text-sm leading-5 tracking-normal"
+        >
+          Email
+        </label>
+        <input
+          type="email"
+          id="email"
+          required
+          className="w-[343px] h-[44px] gap-2 rounded-lg border border-gray-300 pt-2.5 pr-3.5 pb-2.5 pl-3.5"
+        />
+      </div>
+      <div className="mb-4">
+        <label
+          htmlFor="password"
+          className="font-medium text-sm leading-5 tracking-normal"
+        >
+          Password
+        </label>
+        <input
+          type="password"
+          id="password"
+          required
+          className="w-[343px] h-[44px] gap-2 rounded-lg border border-gray-300 pt-2.5 pr-3.5 pb-2.5 pl-3.5"
+        />
+      </div>
+
+      <div className="flex justify-between items-center mb-4 font-inter font-medium mt-4">
+        <div className="flex items-center">
+          <input type="checkbox" id="remember-me" className="mr-2" />
+          <label htmlFor="remember-me" className="text-sm">
+            Remember for 30 days
+          </label>
+        </div>
+        <Link href="#" className="text-[#344054] text-sm">
+          Forgot password?
+        </Link>
+      </div>
+
+      <div className="mb-4">
+        <Link href="/onboarding"><button
+          type="submit"
+          className="w-full bg-btncolor text-white py-2 rounded-[8px] mb-4 font-semibold"
+        >
+          Sign in
+        </button></Link>
+        <button
+          type="submit"
+          className="w-full border flex items-center justify-center py-2 rounded font-semibold"
+        >
+          <Image
+            src={GoogleIcon}
+            alt="Google"
+            width={24}
+            height={24}
+            className="mr-2"
+          />
+          Sign in with Google
+        </button>
+      </div>
+    </form>
+    <div className="text-center mt-6">
+      <p>
+        Don't have an account?{" "}
+        <Link href="#" className="text-[#344054] font-semibold">
+          Sign up
+        </Link>
+      </p>
+    </div>
+  </div>
+
+  {/* cookies text moved outside, centered at bottom */}
+  <div className="absolute bottom-8 text-center text-xs text-gray-500 w-[500px] font-inter font-bold leading-none tracking-normal">
+    <p>
+      BookMyPlay uses cookies for analytics personalized content and ads.
+      <br />
+      By using Scale's services you agree to this use of cookies.{" "}
+      <Link href="#" className="underline">
+        Learn more
+      </Link>
+    </p>
+  </div>
+</main>
+    </>
   );
 }
