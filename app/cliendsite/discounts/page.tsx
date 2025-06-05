@@ -1,13 +1,14 @@
 import Sidebar from '@/components/Sidebar/sidebar'
-// import { Button } from "@/components/ui/button"
+import Discounts from "@/components/pages/discounts";
+
 
 import React from 'react'
 
 const page = () => {
   return (<>
-  <div className="">
+  <div className="flex flex-col lg:flex-row">
     <Sidebar />
-    {/* <Button className='"bg-white text-green-600 px-2 py-1 rounded text-sm ' >Button</Button> */}
+    <Discounts />
   </div>
   </>
   )
